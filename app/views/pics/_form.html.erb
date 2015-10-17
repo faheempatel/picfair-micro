@@ -23,14 +23,8 @@
     <%= f.label :url %><br>
     <%= f.text_field :url %>
   </div>
-  <div class="field">
-    <%= f.label :created_at %><br>
-    <%= f.datetime_select :created_at %>
-  </div>
-  <div class="field">
-    <%= f.label :updated_at %><br>
-    <%= f.datetime_select :updated_at %>
-  </div>
+  <%= f.hidden_field :created_at %>
+  <%= f.hidden_field :updated_at %>
   <div class="actions">
     <%= f.submit %>
   </div>
