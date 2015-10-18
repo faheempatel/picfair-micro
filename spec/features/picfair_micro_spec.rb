@@ -19,7 +19,11 @@ RSpec.describe "Picfair micro:", :type => :feature do
     end
 
     scenario 'edit a pic' do
-      skip("TODO")
+      add_image('http://www.fillmurray.com/100/100', 'Unedited Name')
+      click_link('Edit')
+      fill_in('Name', :with => 'Edited Name')
+      click_button('Update Pic')
+      expect(page).to have_content 'Name: Edited Name'
     end
 
     scenario 'view a list of all pics' do
@@ -34,9 +38,9 @@ RSpec.describe "Picfair micro:", :type => :feature do
   end
 end
 
-def add_image(url, title = 'Some Image')
+def add_image(url, name = 'Some Image')
   visit(new_pic_path)
-  fill_in('Name', :with => title)
+  fill_in('Name', :with => name)
   fill_in('Description', :with => 'blah blah')
   fill_in('Url', :with => url)
   click_button('Create Pic')
