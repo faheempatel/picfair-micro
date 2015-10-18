@@ -11,8 +11,7 @@
 </p>
 
 <p>
-  <strong>Url:</strong>
-  <%= @pic.url %>
+  <%= image_tag @pic.url, alt: @pic.description  %>
 </p>
 
 <p>
@@ -26,5 +25,4 @@
 </p>
 
 <%= link_to 'Edit', edit_pic_path(@pic) %> |
-<%= link_to 'Destroy', @pic, method: :delete, data: { confirm: 'Are you sure?' } %> |
-<%= link_to 'Back', pics_path %>
+<%= link_to 'Delete', @pic, method: :delete, data: { confirm: 'Are you sure?' } %>
