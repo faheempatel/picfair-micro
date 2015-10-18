@@ -3,4 +3,5 @@
 <%= render 'form' %>
 
 <%= link_to 'Show', @pic %> |
+<%= link_to 'Destroy', @pic, method: :delete, data: { confirm: 'Are you sure?' } %> |
 <%= link_to 'Back', pics_path %>
