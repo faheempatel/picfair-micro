@@ -3,75 +3,64 @@
 // You can use Sass (SCSS) here: http://sass-lang.com/
 .flex-container {
   display: flex;
-  flex-direction: column;
   align-items: center;
+  flex-direction: column;
   padding-left: 2rem;
   padding-right: 2rem;
 }
 
-header {
-  padding-bottom: 10px;
-  justify-content: space-between;
+.header {
   align-items: flex-start;
+  justify-content: space-between;
+  padding-bottom: 10px;
+
   border-bottom: 1px solid #000;
-  h1 {
-    margin: 0;
-  }
-  a {
-    color: #ffb700;
-  }
 }
 
-a.upload-button {
+.header__logo {
+  color: #FFB700;
+}
+
+.header__upload-button {
   height: 20px;
+  color: #FFF;
 }
 
 .list {
-  width: 500px;
+  max-width: 500px;
 }
 
-.row {
+.list__item {
   width: 100%;
   margin-bottom: 25px;
-
-  .pic {
-    width: 100%;
-    height: calc(500px / 1.77);
-    border-radius: 4px;
-  }
 
   h3 {
     margin-top: 0;
   }
 }
 
-.info {
+.list__pic {
+  width: 100%;
+  height: calc(500px / 1.77);
+  border-radius: 4px;
+}
+
+.list__info {
   align-items: flex-start;
   justify-content: space-between;
 }
 
 .starred-panel {
   align-items: center;
-  img {
-    height: 20px;
-  }
-  p {
-    margin: 0;
-    margin-left: 8px;
-  }
 }
 
-.create-button {
-  width: 100%;
+.starred-panel__star {
+  height: 20px;
 }
 
-.view-image {
-  width: 500px;
-
-  .pic {
-    height: 280px;
-    border-radius: 4px;
-  }
+.starred-panel__label {
+  margin: 0;
+  margin-left: 8px;
 }
 
 textarea {

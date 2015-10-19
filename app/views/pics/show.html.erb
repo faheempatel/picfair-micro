@@ -1,18 +1,15 @@
 <div class="flex-container">
 
-  <div class="view-image flex flex-column">
+  <div class="list col-12 flex flex-column">
 
     <%= render "header" %>
 
     <h2 class="m0"><%= @pic.name %></h2>
     <p><%= @pic.description %></p>
-    <%= image_tag @pic.url, alt: @pic.description, :class => "pic mb2" %>
+    <%= image_tag @pic.url, alt: @pic.description, :class => "list__pic mb2" %>
 
     <% if @pic.starred %>
-      <div class="starred-panel flex mb2">
-        <img class="star" src="/assets/star.png" alt="" />
-        <p class="bold">Starred</p>
-      </div>
+      <%= render "starred_panel" %>
     <% end %>
 
     <p>
