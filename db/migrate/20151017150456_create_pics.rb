@@ -4,8 +4,6 @@ class CreatePics < ActiveRecord::Migration
       t.string :name
       t.text :description
       t.string :url
-      t.timestamp :created_at
-      t.timestamp :updated_at
 
       t.timestamps null: false
     end
