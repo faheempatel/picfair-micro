@@ -12,15 +12,21 @@
   <% end %>
 
     <%= f.label :name %>
-    <%= f.text_field :name, :class => "block field col-12 mb2" %>
+    <%= f.text_field :name, :required => true, :class => "block field col-12" %>
+    <p class="bold red mb2">Required</p>
+
     <%= f.label :description %>
-    <%= f.text_field :description, :class => "block field col-12 mb2" %>
+    <%= f.text_area :description, :class => "block field col-12 mb2" %>
+
     <%= f.label :url %>
-    <%= f.text_field :url, :class => "block field col-12 mb2" %>
+    <%= f.text_field :url, :required => true, :class => "block field col-12" %>
+    <p class="bold red mb2">Required</p>
+
     <div class="starred-panel flex mb2">
         <img class="star" src="/assets/star.png" alt="" />
         <%= f.label :starred, "Star", :class => "p1"%>
-        <%= f.check_box :starred%>
+        <%= f.check_box :starred %>
     </div>
+
     <%= f.submit :class => "create-button block btn btn-primary mb2" %>
 <% end %>

@@ -2,7 +2,7 @@
 
   <div class="view-image flex flex-column">
 
-    <%= render 'header' %>
+    <%= render "header" %>
 
     <h2 class="m0"><%= @pic.name %></h2>
     <p><%= @pic.description %></p>
@@ -25,8 +25,8 @@
       <%= time_ago_in_words(@pic.updated_at) %> ago
     </p>
 
-    <%= button_to 'Edit', edit_pic_path(@pic), method: :get, :class => "btn btn-primary col-12 mb1" %>
-    <%= button_to 'Delete', @pic, method: :delete, data: { confirm: 'Are you sure?' }, :class => "btn btn-primary bg-red col-12 mb1" %>
+    <%= button_to "Edit", edit_pic_path(@pic), method: :get, :class => "btn btn-primary col-12 mb1" %>
+    <%= button_to "Delete", @pic, method: :delete, data: { confirm: "Are you sure?" }, :class => "btn btn-primary bg-red col-12 mb1" %>
   </div>
 
 </div>

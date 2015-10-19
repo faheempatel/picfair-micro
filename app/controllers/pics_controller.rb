@@ -4,6 +4,7 @@ class PicsController < ApplicationController
   # GET /pics
   # GET /pics.json
   def index
+    # Display all pictures - starred images first
     @pics = Pic.starred_first
   end
 

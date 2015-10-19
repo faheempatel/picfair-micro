@@ -1,22 +1,22 @@
 <div class="flex-container">
   <div class="list flex flex-column">
 
-    <%= render 'header' %>
+    <%= render "header" %>
 
     <% @pics.each do |pic| %>
       <div class="row">
 
-        <%= link_to image_tag(pic.url, :alt => pic.description, :class => 'pic'), pic %>
+        <%= link_to image_tag(pic.url, :alt => pic.description, :class => "pic"), pic %>
 
         <div class="info flex mt1 mb2">
           <div class="">
-            <h3><%= link_to pic.name, pic, :class => 'blue'%></h3>
+            <h3><%= link_to pic.name, pic, :class => "blue"%></h3>
             <p class="gray"><%= pic.description %></p>
           </div>
 
           <% if pic.starred %>
             <div class="starred-panel flex">
-              <img class="star" src="/assets/star.png" alt="" />
+              <img class="star" src="/assets/star.png" alt="starred" />
               <p><span class="bold">Starred</span></p>
             </div>
           <% end %>

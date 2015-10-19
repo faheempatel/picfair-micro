@@ -1,9 +1,9 @@
 <div class="flex-container">
   <div class="view-image">
-    <%= render 'header' %>
+    <%= render "header" %>
     <h1>Editing Pic</h1>
-    <%= render 'form' %>
-    <%= button_to 'Delete', @pic, method: :delete, data: { confirm: 'Are you sure?' }, :class => "btn btn-primary bg-red col-12 mb1" %>
-    <%= link_to 'Cancel', @pic %>
+    <%= render "form" %>
+    <%= button_to "Delete", @pic, method: :delete, data: { confirm: "Are you sure?" }, :class => "btn btn-primary bg-red col-12 mb1" %>
+    <%= link_to "Cancel", @pic %>
   </div>
 </div>
