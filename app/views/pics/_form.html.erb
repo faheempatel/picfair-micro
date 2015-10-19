@@ -13,16 +13,20 @@
 
     <%= f.label :name %>
     <%= f.text_field :name, :required => true, :class => "block field col-12" %>
-    <p class="bold red mb2">Required</p>
+    <% if !@pic.name? %>
+      <p class="bold red">Required</p>
+    <% end %>
 
-    <%= f.label :description %>
+    <%= f.label :description, :class => "inline-block mt2" %>
     <%= f.text_area :description, :class => "block field col-12 mb2" %>
 
     <%= f.label :url %>
     <%= f.text_field :url, :required => true, :class => "block field col-12" %>
-    <p class="bold red mb2">Required</p>
+    <% if !@pic.name? %>
+      <p class="bold red">Required</p>
+    <% end %>
 
-    <div class="starred-panel flex mb2">
+    <div class="starred-panel flex mt2 mb2">
         <img class="star" src="/assets/star.png" alt="" />
         <%= f.label :starred, "Star", :class => "p1"%>
         <%= f.check_box :starred %>
