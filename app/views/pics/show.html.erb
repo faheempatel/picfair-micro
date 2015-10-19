@@ -24,5 +24,10 @@
   <%= @pic.updated_at %>
 </p>
 
+<p>
+  <strong>Starred:</strong>
+  <%= @pic.starred %>
+</p>
+
 <%= link_to 'Edit', edit_pic_path(@pic) %> |
 <%= link_to 'Delete', @pic, method: :delete, data: { confirm: 'Are you sure?' } %>
