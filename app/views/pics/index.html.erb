@@ -3,8 +3,9 @@
 <h1>Listing Pics</h1>
 
   <% @pics.each do |pic| %>
-    <p><%= pic.name %></p>
+    <h3><%= pic.name %></h3>
     <p><%= pic.description %></p>
+    <p>Starred: <%= pic.starred %></p>
     <%= link_to image_tag(pic.url, :alt => pic.description), pic %>
   <% end %>
 
