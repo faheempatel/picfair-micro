@@ -1,33 +1,32 @@
-<p id="notice"><%= notice %></p>
+<div class="flex-container">
 
-<p>
-  <strong>Name:</strong>
-  <%= @pic.name %>
-</p>
+  <div class="view-image flex flex-column">
 
-<p>
-  <strong>Description:</strong>
-  <%= @pic.description %>
-</p>
+    <%= render 'header' %>
 
-<p>
-  <%= image_tag @pic.url, alt: @pic.description  %>
-</p>
+    <h2 class="m0"><%= @pic.name %></h2>
+    <p><%= @pic.description %></p>
+    <%= image_tag @pic.url, alt: @pic.description, :class => "pic mb2" %>
 
-<p>
-  <strong>Created at:</strong>
-  <%= @pic.created_at %>
-</p>
+    <% if @pic.starred %>
+      <div class="starred-panel flex mb2">
+        <img class="star" src="/assets/star.png" alt="" />
+        <p class="bold">Starred</p>
+      </div>
+    <% end %>
 
-<p>
-  <strong>Updated at:</strong>
-  <%= @pic.updated_at %>
-</p>
+    <p>
+      <strong>Created:</strong>
+      <%= time_ago_in_words(@pic.created_at) %> ago
+    </p>
 
-<p>
-  <strong>Starred:</strong>
-  <%= @pic.starred %>
-</p>
+    <p>
+      <strong>Updated:</strong>
+      <%= time_ago_in_words(@pic.updated_at) %> ago
+    </p>
 
-<%= link_to 'Edit', edit_pic_path(@pic) %> |
-<%= link_to 'Delete', @pic, method: :delete, data: { confirm: 'Are you sure?' } %>
+    <%= button_to 'Edit', edit_pic_path(@pic), method: :get, :class => "btn btn-primary col-12 mb1" %>
+    <%= button_to 'Delete', @pic, method: :delete, data: { confirm: 'Are you sure?' }, :class => "btn btn-primary bg-red col-12 mb1" %>
+  </div>
+
+</div>
