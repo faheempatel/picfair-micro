@@ -7,23 +7,23 @@ RSpec.describe "Picfair micro:", :type => :feature do
     scenario 'can add a new pic' do
       # add a pic
       add_image('http://placekitten.com/100/100')
-      # check for success message
-      expect(page).to have_content 'Pic was successfully created.'
+      # check for image
+      expect(page).to have_selector 'img', count: 1
     end
 
     scenario 'view the pic I added' do
       add_image('http://www.fillmurray.com/100/100', 'Bill Murray')
       visit(pics_path)
       find('img').click
-      expect(page).to have_content 'Name: Bill Murray'
+      expect(page).to have_content 'Bill Murray'
     end
 
     scenario 'edit a pic' do
       add_image('http://www.fillmurray.com/100/100', 'Unedited Name')
-      click_link('Edit')
+      click_button('Edit')
       fill_in('Name', :with => 'Edited Name')
       click_button('Update Pic')
-      expect(page).to have_content 'Name: Edited Name'
+      expect(page).to have_content 'Edited Name'
     end
 
     scenario 'view a list of all pics' do
