@@ -27,7 +27,7 @@
     <% end %>
 
     <div class="starred-panel flex mt2 mb2">
-        <img class="star" src="/assets/star.png" alt="" />
+        <img class="star" src="<%= asset_path('star.png') %>" alt="" />
         <%= f.label :starred, "Star", :class => "p1"%>
         <%= f.check_box :starred %>
     </div>

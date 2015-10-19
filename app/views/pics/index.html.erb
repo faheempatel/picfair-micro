@@ -9,7 +9,8 @@
         <%= link_to image_tag(pic.url, :alt => pic.description, :class => "list__pic"), pic %>
 
         <div class="list__info flex mt1 mb2">
-          <div>
+
+          <div class="info__text">
             <h3><%= link_to pic.name, pic, :class => "blue"%></h3>
             <p class="gray"><%= pic.description %></p>
           </div>

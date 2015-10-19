@@ -5,14 +5,14 @@
     <%= render "header" %>
 
     <h2 class="m0"><%= @pic.name %></h2>
-    <p><%= @pic.description %></p>
+    <p class="gray"><%= @pic.description %></p>
     <%= image_tag @pic.url, alt: @pic.description, :class => "list__pic mb2" %>
 
     <% if @pic.starred %>
       <%= render "starred_panel" %>
     <% end %>
 
-    <p>
+    <p class="mb0">
       <strong>Created:</strong>
       <%= time_ago_in_words(@pic.created_at) %> ago
     </p>
